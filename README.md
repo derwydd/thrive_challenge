@@ -1,66 +1,61 @@
-{
-    "name": "derwydd/thrive-challenge",
-    "autoload": {
-        "psr-4": {
-            "derwydd\\thriveChallenge\\": "app/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Jason Brock"
-        }
-    ],
-    "require": {}
-}
-
-"autoload": {
-        "psr-4": {
-            "App\\": "app/"
-        }
-    },
-
-Server
-Regenerate Composer Files
-composer dumpautoload
-
-Run Server
-php -S localhost:8000
+# How it works
 
 
-Database
+
+# Desired Architecture that I wanted to acheive
+- MVC, didn't add the view layer
+- Custom routing of requests
+- Error Catching
+- Code reuse & Modular code
+- OOP
+- Namespacing
+- SQL ORM: Propel integration
+- Unit testing: PHPUnit ?
+
+
+# What could be improved
+- Better Routing and parameter support
+- Better Error catching
+- User Session Mgmt and validation of session upon using APIs
+- Use of middleware
+- Better use of SQL queries
+- Logging
+
+# Insomnia API Client
+- Root of project, see file: Insomnia_Thrive.json
+
+# Server
+## Regenerate Composer Files
+```composer dumpautoload```
+
+## Run Server
+```php -S localhost:8000```
+
+
+## Database
+Sqlite was used for simplicity
+```
+location: ./database/default.sqlite
 Type: SQLite3
 User: thrive
 Pass: !thrive
 utf8
+```
 
-Regenerate SQL 
-php propel sql:build --overwrite    
+## Regenerate SQL 
+```php propel sql:build --overwrite    ```
 
-Regenerate Model
-php propel model:build   
+## Regenerate Model
+```php propel model:build   ```
 
-Apply SQL Schema
-php propel sql:insert  
+## Apply SQL Schema
+```php propel sql:insert  ```
 
 
-App User
+## App Main User
+```
 Username: thriveuser
 Password: supersecurepassword
+```
 
 
-Architecture
-- MVC
-- Modular Monolith
-- Unit Testing
-- Error Catching
-- Code reuse
-- Logging
-- Model ORM Integrating
-- Namespace 
-- Decoupling
-
-What I would have done better
-- Better Routing and parameter support
-- Better Error catching
-- User Session Mgmt
-- Better use of SQL queries
