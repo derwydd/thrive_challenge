@@ -1,5 +1,5 @@
 # How it works
-
+Completed using MVC architecture coded from scratch to demonstrate knowledge of the design pattern and competency of the language (after relearning PHP). The view layer was not worked-in based on requirements. Database ORM Propel was used to interface with SQLite. MySQL could be easily configured with no code change. Insomnia API Client file added for import and easy access to test all CRUD APIs. All scenarios were successfully tested.
 
 
 # Desired Architecture that I wanted to acheive
@@ -10,7 +10,6 @@
 - OOP
 - Namespacing
 - SQL ORM: Propel integration
-- Unit testing: PHPUnit ?
 
 
 # What could be improved
@@ -20,6 +19,10 @@
 - Use of middleware
 - Better use of SQL queries
 - Logging
+
+# What I didn't have time to complete
+- Unit testing: PHPUnit ?
+- Docker
 
 # Insomnia API Client
 - Root of project, see file: Insomnia_Thrive.json
