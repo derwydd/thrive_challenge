@@ -1,6 +1,64 @@
 # How it works
 Completed using MVC architecture coded from scratch to demonstrate knowledge of the design pattern and competency of the language (after relearning PHP). All calls are RESTful. The view layer was not worked-in based on requirements. Database ORM Propel was used to interface with SQLite. MySQL could be easily configured with no code change. Significant code-reuse was imployed namely with the Controller functions where it was moved out to a lib (./lib/ControllerCRUD.php). Insomnia API Client file added for import and easy access to test all CRUD APIs. All scenarios were successfully tested.
 
+- Add Basket Item: POST localhost:8000/baskets/new
+```
+{
+	"user_id":1,
+	"product_code":"B01"
+}
+```
+- Basket Total: POST localhost:8000/baskets/total
+```
+{
+	"user_id":1
+}
+```
+- Add Product: POST localhost:8000/products/new
+```
+{
+	"product_name":"Blue Widget",
+	"product_code":"B01",
+	"price": 7.95
+}
+```
+
+## Delivery Costs
+Delivery costs were added to be more configurable and dynamic. While a better solution is possible, this is what I came up with quickly. Essentially the logic in baskets model looks at the operator and the threshold values, compares it against the subTotal to determine which delivery cost is valid.
+
+Logic should have been put in the controller, not the model.
+
+Delivery Costs that were preloaded:
+```
+[
+	{
+		"id": 1,
+		"delivery_name": "< $50",
+		"operator": "<",
+		"threshold": 50,
+		"cost": 4.95
+	},
+	{
+		"id": 2,
+		"delivery_name": "< $90",
+		"operator": "<",
+		"threshold": 90,
+		"cost": 2.95
+	},
+	{
+		"id": 3,
+		"delivery_name": "< $90",
+		"operator": ">=",
+		"threshold": 90,
+		"cost": 0
+	}
+]
+```
+
+## Special Offers
+I preloaded the database with an entry regarding special offers, but didn't have time for properly hooking it up, although logic was added and it works. I would have liked it to be more dynamic.
+
+
 # APIs
 ```
 $router->addRoute('/users', UsersController::class, 'index');            //GET
