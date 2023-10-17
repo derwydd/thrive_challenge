@@ -1,0 +1,17 @@
+{
+    "propel": {
+        "database": {
+            "connections": {
+                "default": {
+                    "adapter": "sqlite",
+                    "dsn": "sqlite:./database\/default.sqlite",
+                    "user": "thrive",
+                    "password": "!thrive",
+                    "settings": {
+                        "charset": "utf8"
+                    }
+                }
+            }
+        }
+    }
+}
